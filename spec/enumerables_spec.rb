@@ -60,4 +60,22 @@ describe Enumerable do
     end
   end
 
+  describe '#my_count' do
+    it 'if a block and arguments is not given returns a count number' do
+      expect(array.my_count)
+    end
+
+    it 'if an arguments is given returns a count' do
+      expect(array.my_count(2))
+    end
+
+    it 'if a block and arguments is given returns a count number' do
+      expect(array.my_count(&:even?)).to eql(2)
+    end
+
+    it 'if a block and arguments is given returns a count number' do
+      expect(array.my_count(&:even?)).to_not eql(0)
+    end
+  end
+
 end
