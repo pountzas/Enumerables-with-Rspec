@@ -1,4 +1,7 @@
-# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+# frozen_string_literal: true
+
+# rubocop: disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+
 # Implementing  ruby enum methods
 module Enumerable
   def my_each
@@ -110,7 +113,7 @@ module Enumerable
     sum
   end
 end
-# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+# rubocop: enable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 def multiply_els(arr = nil)
   arr.my_inject(:*)
