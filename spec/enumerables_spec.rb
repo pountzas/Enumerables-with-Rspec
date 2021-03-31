@@ -145,5 +145,31 @@ describe Enumerable do
       expect(%w[cake chocolate lolipop].my_any?(/l/)).to_not eql(false)
     end
   end
+
+  describe '#my_none?' do
+    it 'if no block is given and no items are true returns true ' do
+      expect([nil, false].my_none?).to eql(true)
+    end
+
+    it 'returns false if no block is given and at least one of the items are true returns false' do
+      expect([nil, false, true].my_none?).to eql(false)
+    end
+
+    it 'if none of the elements in the array returns true for the condition returns true' do
+      expect(%w[cake chocolate lolipop].my_none? { |word| word.length == 5 }).to eql(true)
+    end
+
+    it 'if at least one of the elements returns true for the condition returns false' do
+      expect(%w[cake chocolate lolipop].my_none? { |word| word.length >= 4 }).to eql(false)
+    end
+
+    it 'returns whether pattern === element for none collection member' do
+      expect(%w[cake chocolate lolipop].my_none?(/d/)).to eql(true)
+    end
+
+    it 'returns whether pattern === element for none collection member' do
+      expect(%w[cake chocolate lolipop].my_none?(/l/)).to_not eql(true)
+    end
+  end
   # rubocop: enable Metrics/BlockLength
 end
