@@ -197,5 +197,15 @@ describe Enumerable do
       expect(%w[cat sheep bear].my_inject { |memo, word| memo.length > word.length ? memo : word }).to eql('sheep')
     end
   end
+
+  describe '#multiply_els' do
+    it 'returns the multiplication of each item in an array' do
+      expect(multiply_els([2, 4, 5])).to eql(40)
+    end
+
+    it 'returns the multiplication of each item in a range' do
+      expect(multiply_els(5..10)).to_not eql(9)
+    end
+  end
   # rubocop: enable Metrics/BlockLength
 end
