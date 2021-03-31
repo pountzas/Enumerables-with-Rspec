@@ -89,5 +89,35 @@ describe Enumerable do
       expect(array.my_map { 'cake' }).to eql(%w[cake cake cake cake])
     end
   end
+
+  describe '#my_all?' do
+    it 'if no block is given and none of the items are false or nil returns true' do
+      expect([].my_all?).to eql(true)
+    end
+
+    it 'if no block is given and at least one of the items are false or nil returns false' do
+      expect([nil, true, 99].my_all?).to eql(false)
+    end
+
+    it 'if every element in the array items return true for the condition then returns true ' do
+      expect(%w[cake chocolate lolipop].my_all? { |word| word.length >= 4 }).to eql(true)
+    end
+
+    it 'if one or more of the elements in the array returns false for the condition then returns false' do
+      expect(%w[cake chocolate lolipop].my_all? { |word| word.length >= 5 }).to eql(false)
+    end
+
+    it 'returns whether pattern === element for every collection member' do
+      expect(%w[cake chocolate lolipop].my_all?(/t/)).to eql(false)
+    end
+
+    it 'returns whether pattern === element for every collection member' do
+      expect(%w[cake chocolate candy].my_all?(/c/)).to_not eql(false)
+    end
+
+    it 'returns true if every element is a member of a given class' do
+      expect([1, 2i, 3.14].my_all?(Numeric)).to eql(true)
+    end
+  end
   # rubocop: enable Metrics/BlockLength
 end
