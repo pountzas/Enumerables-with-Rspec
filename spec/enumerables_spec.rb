@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# rubocop: disable Metrics/BlockLength
-
 # spec../enumerables
 
 require_relative '../enumerables'
@@ -207,5 +203,4 @@ describe Enumerable do
       expect(multiply_els(5..10)).to_not eql(9)
     end
   end
-  # rubocop: enable Metrics/BlockLength
 end
