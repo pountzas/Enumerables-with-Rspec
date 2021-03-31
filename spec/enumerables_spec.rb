@@ -119,5 +119,31 @@ describe Enumerable do
       expect([1, 2i, 3.14].my_all?(Numeric)).to eql(true)
     end
   end
+
+  describe '#my_any?' do
+    it 'if no block is given and no items are true returns false ' do
+      expect([].my_any?).to eql(false)
+    end
+
+    it 'if no block is given and one or more items are true returns true ' do
+      expect([nil, true, 99].my_any?).to eql(true)
+    end
+
+    it 'if one or more elements in the array returns true then true' do
+      expect(%w[cake chocolate lolipop].my_any? { |word| word.length >= 4 }).to eql(true)
+    end
+
+    it 'if one or more elements in the array returns true then true' do
+      expect(%w[cake chocolate lolipop].my_any? { |word| word.length >= 8 }).to eql(true)
+    end
+
+    it 'returns whether pattern === element for any collection member' do
+      expect(%w[cake chocolate lolipop].my_any?(/d/)).to eql(false)
+    end
+
+    it 'returns whether pattern === element for any collection member' do
+      expect(%w[cake chocolate lolipop].my_any?(/l/)).to_not eql(false)
+    end
+  end
   # rubocop: enable Metrics/BlockLength
 end
