@@ -45,4 +45,19 @@ describe Enumerable do
       expect(range.my_each_with_index { |num| num }).to_not eql([])
     end
   end
+
+  describe '#my_select' do
+    it 'if the block is given returns a range' do
+      expect(range.my_select { |i| i % 3 == 0 }).to eql([3, 6, 9])
+    end
+
+    it 'if the block is given returns a even number' do
+      expect(range.my_select(&:even?)).to eql([2, 4, 6, 8, 10])
+    end
+
+    it 'if the block is given returns a even number' do
+      expect(range.my_select(&:even?)).to_not eql([])
+    end
+  end
+
 end
