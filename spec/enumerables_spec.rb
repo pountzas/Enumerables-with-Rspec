@@ -79,5 +79,15 @@ describe Enumerable do
       expect(array.my_count(&:even?)).to_not eql(0)
     end
   end
+
+  describe '#my_map' do
+    it 'if a block given returns a count number' do
+      expect(array.my_map { |i| i * i }).to eql([1, 4, 9, 16])
+    end
+
+    it 'if no block is given an enumerator is returned' do
+      expect(array.my_map { 'cake' }).to eql(%w[cake cake cake cake])
+    end
+  end
   # rubocop: enable Metrics/BlockLength
 end
