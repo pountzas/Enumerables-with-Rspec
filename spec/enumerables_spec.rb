@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # spec../enumerables
 
 # rubocop: disable Metrics/BlockLength
