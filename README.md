@@ -25,6 +25,13 @@ Create a new folder/directory for the project
 - cd building-enumerables
 - run `ruby enumerables.rb`
 
+### Testing
+  * Open your terminal
+  * To install Rspec, run the following command into your terminal: </br>
+  ``` gem install rspec ```
+  * Go to your local project repository with the cd command.
+  * To run the test examples, run the following command into your terminal: </br>
+``` rspec ```
 
 👤 **Nikos Pountzas**
 
