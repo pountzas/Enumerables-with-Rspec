@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rubocop: disable Metrics/MethodLength, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 # Implementing  ruby enum methods
