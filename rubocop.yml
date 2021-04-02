@@ -15,6 +15,12 @@ Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
   Max: 150
+Metrics/PerceivedComplexity:
+  Max: 20
+Metrics/CyclomaticComplexity:
+  Max: 20
+Metrics/ModuleLength:
+  Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 30
@@ -32,6 +38,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/For:
+  EnforcedStyle: for
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
