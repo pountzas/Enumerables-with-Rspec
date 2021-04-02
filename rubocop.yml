@@ -6,22 +6,24 @@ AllCops:
     - "node_modules/**/*"
 
   DisplayCopNames: true
-  
-Metrics/CyclomaticComplexity:
-  Max: 120
-Metrics/PerceivedComplexity:
-  Max: 120
+
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
-  Max: 120
+  Max: 20
 Metrics/AbcSize:
-  Max: 150
+  Max: 50
 Metrics/ClassLength:
+  Max: 150
+Metrics/PerceivedComplexity:
+  Max: 20
+Metrics/CyclomaticComplexity:
+  Max: 20
+Metrics/ModuleLength:
   Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
-  Max: 130
+  Max: 30
 
 
 Style/Documentation:
@@ -35,7 +37,9 @@ Style/AndOr:
 Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  EnforcedStyle: never
+Style/For:
+  EnforcedStyle: for
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
